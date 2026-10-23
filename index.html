@@ -298,7 +298,8 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
 .expert-summary{margin:20px 0 0;color:var(--mut);font-size:14px}
 .expert-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
 .expert-actions .btn.alt-btn{background:var(--bg2);color:var(--ink);box-shadow:none;border:1px solid var(--line)}
-.investor{display:grid;grid-template-columns:minmax(150px,230px) minmax(0,1fr);align-items:center;gap:clamp(24px,5vw,56px);padding:clamp(24px,4vw,42px);border-radius:32px;background:linear-gradient(120deg,var(--bg2),var(--bg));border:1px solid var(--line)}
+.investor{display:grid;grid-template-columns:minmax(150px,230px) minmax(0,1fr);align-items:center;gap:clamp(24px,5vw,56px);padding:clamp(24px,4vw,42px);border:1px solid transparent;border-radius:32px;background:linear-gradient(120deg,var(--bg2),var(--bg)) padding-box,linear-gradient(125deg,var(--c1),var(--c4),var(--c2),var(--c3),var(--c1)) border-box;background-size:100% 100%,260% 260%;background-position:0 0,0% 50%;box-shadow:0 12px 32px #2680ff20;animation:work-contact-glow 5s ease-in-out infinite;transition:transform .3s,box-shadow .3s}
+.investor:hover{transform:translateY(-5px);box-shadow:0 18px 42px #ff5fa244}
 .investor-logo{display:block;width:100%;padding:20px;border-radius:22px;background:#fff;box-shadow:0 12px 30px #1f214912}
 .investor h2{margin-bottom:12px}
 .investor p{margin:0}
@@ -345,7 +346,7 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
 @media(max-width:520px){.expert-heading{margin-bottom:24px}.expert-quote{padding:23px 20px 23px 54px}.expert-quote .mark{left:16px}.expert-points{grid-template-columns:1fr}.expert-point h3{font-size:16px}.expert-actions{display:grid}.expert-actions .btn{text-align:center}}
 @media(max-width:600px){.investor{grid-template-columns:1fr;gap:20px;padding:20px}.investor-logo{width:min(220px,75%);margin:auto;padding:18px}}
 @media(max-width:680px){.layout-subsection{margin-top:44px;padding-top:34px}.layout-gallery{grid-template-columns:1fr;gap:14px}.layout-card figcaption{padding:14px 16px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{transition:opacity .35s ease,transform .35s ease;transform:translateY(12px)}.blob,.tw,.marq div,.map::before,.map i,.fab,.ct .ph,.rd,.rg,.hs.pj i::after,.ov line,.work-contact{animation:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{transition:opacity .35s ease,transform .35s ease;transform:translateY(12px)}.blob,.tw,.marq div,.map::before,.map i,.fab,.ct .ph,.rd,.rg,.hs.pj i::after,.ov line,.work-contact,.investor{animation:none!important}}
 </style>
 </head>
 <body>
