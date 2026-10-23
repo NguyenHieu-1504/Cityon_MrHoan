@@ -130,6 +130,27 @@ td{padding:14px 20px;border-bottom:1px solid var(--line);font-size:15px}td:first
 details{border-bottom:1px solid var(--line);padding:20px 0}summary{font-weight:800;font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
 summary::after{content:"+";color:var(--c4);font-size:26px;line-height:1;transition:.3s}details[open] summary::after{transform:rotate(45deg)}
 details p{color:var(--mut);margin:12px 0 0}
+#faq .faq-list{margin-top:26px}
+#faq .faq-item{margin:12px 0;padding:0;border:1px solid var(--line);border-radius:22px;background:var(--bg);overflow:hidden;transition:border-color .3s,box-shadow .3s,transform .3s,background-color .3s}
+#faq .faq-item:hover{border-color:color-mix(in srgb,var(--c1) 55%,var(--line));box-shadow:0 12px 30px #2680ff18;transform:translateY(-2px)}
+#faq .faq-item[open]{border-color:var(--c1);background:linear-gradient(125deg,color-mix(in srgb,var(--c1) 6%,var(--bg)),var(--bg2));box-shadow:0 14px 34px #2680ff1c}
+#faq .faq-item summary{align-items:center;justify-content:flex-start;padding:18px 20px;font-size:clamp(15px,1.7vw,18px);line-height:1.45;transition:color .25s}
+#faq .faq-item summary::-webkit-details-marker{display:none}
+#faq .faq-item[open] summary{color:var(--c1)}
+#faq .faq-item summary::after{content:"+";display:grid;place-items:center;flex:none;width:34px;height:34px;margin-left:auto;border-radius:50%;background:color-mix(in srgb,var(--c4) 12%,var(--bg2));color:var(--c4);font-size:23px;transition:transform .35s,background-color .35s,color .35s}
+#faq .faq-item[open] summary::after{transform:rotate(45deg);background:var(--c1);color:#fff}
+#faq .faq-number{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--c1),var(--c4));color:#fff;font-size:12px;font-weight:900;box-shadow:0 5px 14px #2680ff30}
+#faq .faq-question{flex:1}
+#faq .faq-answer{padding:0 22px 22px 76px;color:var(--mut);line-height:1.75}
+#faq .faq-answer p{margin:0 0 10px;color:inherit}
+#faq .faq-answer p:last-child{margin-bottom:0}
+#faq .faq-answer strong{color:var(--ink)}
+#faq .faq-answer ul{margin:8px 0 0;padding-left:20px}
+#faq .faq-answer li{padding:3px 0}
+#faq .faq-item[open] .faq-answer{animation:faq-answer-in .35s ease both}
+#faq .faq-item summary:focus-visible{outline:3px solid var(--c2);outline-offset:-5px;border-radius:18px}
+@keyframes faq-answer-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){#faq .faq-item{border-radius:18px}#faq .faq-item summary{padding:15px 14px;gap:10px}#faq .faq-number{width:32px;height:32px;border-radius:11px}#faq .faq-answer{padding:0 16px 18px 56px;font-size:14px}}
 .cta{background:linear-gradient(135deg,var(--c1),var(--c4));color:#fff;border-radius:40px;padding:clamp(30px,6vw,70px);display:grid;grid-template-columns:1.1fr 1fr;gap:40px;position:relative;overflow:hidden}
 @media(max-width:820px){.cta{grid-template-columns:1fr}}
 .cta h2{margin-bottom:14px}.cta ul{padding-left:20px;margin:16px 0 0}
@@ -354,7 +375,7 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
 @media(max-width:520px){.expert-heading{margin-bottom:24px}.expert-quote{padding:23px 20px 23px 54px}.expert-quote .mark{left:16px}.expert-points{grid-template-columns:1fr}.expert-point h3{font-size:16px}.expert-actions{display:grid}.expert-actions .btn{text-align:center}}
 @media(max-width:600px){.investor{grid-template-columns:1fr;gap:20px;padding:20px}.investor-logo{width:min(220px,75%);margin:auto;padding:18px}}
 @media(max-width:680px){.layout-subsection{margin-top:44px;padding-top:34px}.layout-gallery{grid-template-columns:1fr;gap:14px}.layout-card figcaption{padding:14px 16px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{transition:opacity .35s ease,transform .35s ease;transform:translateY(12px)}.blob,.tw,.marq div,.map::before,.map i,.fab,.ct .ph,.rd,.rg,.hs.pj i::after,.ov line,.work-contact,.investor,.amenity-plan-frame{animation:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{transition:opacity .35s ease,transform .35s ease;transform:translateY(12px)}.blob,.tw,.marq div,.map::before,.map i,.fab,.ct .ph,.rd,.rg,.hs.pj i::after,.ov line,.work-contact,.investor,.amenity-plan-frame,#faq .faq-item[open] .faq-answer{animation:none!important}}
 </style>
 </head>
 <body>
@@ -511,11 +532,15 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
 <section id="faq" class="alt"><div class="wrap" style="max-width:860px">
   <div class="eyebrow rv">HỎI ĐÁP</div>
   <h2 class="rv">Câu hỏi thường gặp</h2>
-  <details class="rv"><summary>The CityOn nằm ở đâu?</summary><p>Phân khu Phố Biển, Vinhomes Ocean Park 3, Văn Giang, Hưng Yên (nay là xã Nghĩa Trụ), cách Hồ Hoàn Kiếm khoảng 25 – 30 km.</p></details>
-  <details class="rv"><summary>Chủ đầu tư là ai?</summary><p>MIK Group – đơn vị đã phát triển Imperia Garden, Imperia Sky Garden, The Matrix One và The Parkland.</p></details>
-  <details class="rv"><summary>Quy mô dự án thế nào?</summary><p>Toàn khu khoảng 20,9 ha. Giai đoạn 1 (Zone A) gồm 4 tòa tháp với 2.119 căn hộ; tòa A2 ra mắt đầu tiên với 601 căn.</p></details>
-  <details class="rv"><summary>Giá căn hộ bao nhiêu?</summary><p>Tham khảo tháng 10/2026 từ khoảng 55 triệu/m²: Studio từ 1,72 tỷ, 1PN+ từ 2,56 tỷ, 2PN từ 3,16 tỷ, 3PN từ 4,3 tỷ.</p></details>
-  <details class="rv"><summary>Thời hạn sở hữu?</summary><p>Căn hộ The CityOn được sở hữu lâu dài.</p></details>
+  <div class="faq-list">
+    <details class="faq-item rv"><summary><span class="faq-number">01</span><span class="faq-question">Chủ đầu tư dự án là đơn vị nào?</span></summary><div class="faq-answer"><p>Công ty Cổ phần Tập đoàn MIK Group, nhà phát triển bất động sản sáng tạo, kiến thiết cộng đồng sống bền vững tại Việt Nam. Được thành lập vào năm 2014, đến nay MIK Group đã vươn mình mạnh mẽ, trở thành một trong những nhà phát triển bất động sản uy tín hàng đầu Việt Nam.</p><p>Trên hành trình “Kiến tạo cộng đồng sống thịnh vượng”, MIK Group tiên phong tạo dựng bức tranh đô thị tương lai với đa dạng mô hình dự án mang chất lượng vượt trội.</p></div></details>
+    <details class="faq-item rv"><summary><span class="faq-number">02</span><span class="faq-question">Đơn vị phát triển dự án là ai?</span></summary><div class="faq-answer"><p>Công ty Cổ phần Tập đoàn MIK Group.</p></div></details>
+    <details class="faq-item rv"><summary><span class="faq-number">03</span><span class="faq-question">Những điểm nổi bật nhất của dự án là gì?</span></summary><div class="faq-answer"><p><strong>Tổng thể:</strong> Thừa hưởng hệ tiện ích đầy đủ của Khu đô thị Ocean Park như phố đi bộ Grand World, công viên nước, K-Town, Vincom Mega Mall… Khu vực có tính thương mại, mua sắm tập trung đông đúc.</p><p><strong>Vị trí:</strong> Tiếp giáp trục đường giao thông chính (Vành đai 3.5) kết nối hai giai đoạn của khu đô thị. Tầm nhìn ra công viên nước phía Tây không bị chắn.</p><p><strong>Tư vấn thiết kế:</strong> Kiến trúc, cảnh quan được định hình và phát triển bởi các đơn vị tư vấn quốc tế (kiến trúc: NBBJ; cảnh quan: NBBJ, SCI), phối hợp cùng chuyên môn của tư vấn địa phương.</p><p><strong>Sản phẩm:</strong> Đa dạng loại hình (Studio, 1PN+1, 2PN, 2PN+1, 3PN, Duplex, Penthouse), phân bố đồng đều, phù hợp với nhiều đối tượng khách hàng.</p><p><strong>Kiến trúc:</strong> Thiết kế hiện đại, đường nét gọn gàng, mạch lạc.</p><p><strong>Cảnh quan:</strong> Có cung đường sức khỏe liên khu, kết nối các khu A–B–C–D–E–F thành tuyến đi bộ, dạo chơi và tập luyện liền mạch. Mỗi cụm Zone AB, CD, EF có câu chuyện riêng, cùng hệ tiện ích tiêu chuẩn và nâng cấp như đường sức khỏe liên khu, bể bơi ngoài trời, cụm sân thể thao, khu nghỉ ngơi, học tập và kết nối nhóm (study pods, co-worker station…).</p><p><strong>Tiện ích trong nhà:</strong> Phù hợp với tinh thần năng động của CityOn, gần gũi và kết nối cộng đồng, với nhiều tiện ích mới phù hợp với giới trẻ.</p></div></details>
+    <details class="faq-item rv"><summary><span class="faq-number">04</span><span class="faq-question">Có những loại căn hộ nào?</span></summary><div class="faq-answer"><ul><li>Studio: 31,44–32,21 m²</li><li>1PN+1: 46,66–47,67 m²</li><li>2PN: 57,24–59,32 m²</li><li>2PN+1: 66,23–69,85 m²</li><li>3PN: 78,31–80,91 m²</li><li>Duplex: 167,26 m²</li><li>Penthouse (3PN): 126,20–126,36 m²</li><li>Penthouse (4PN): 146,91 m²</li></ul></div></details>
+    <details class="faq-item rv"><summary><span class="faq-number">05</span><span class="faq-question">Có thể đập thông căn không?</span></summary><div class="faq-answer"><p>Khách hàng được phép cải tạo theo nhu cầu, sở thích. Hồ sơ thi công cải tạo cần tuân thủ quy định của cơ quan nhà nước và được Chủ đầu tư hoặc Đơn vị quản lý vận hành do Chủ đầu tư/Ban quản trị thuê phê duyệt.</p></div></details>
+    <details class="faq-item rv"><summary><span class="faq-number">06</span><span class="faq-question">Người nước ngoài có được mua căn hộ dự án không?</span></summary><div class="faq-answer"><p>Người nước ngoài được phép mua nếu dự án có công văn chấp thuận bán cho người nước ngoài.</p></div></details>
+    <details class="faq-item rv"><summary><span class="faq-number">07</span><span class="faq-question">Quy trình ký HĐMB như thế nào?</span></summary><div class="faq-answer"><p>Tại thời điểm ký HĐMB, Phòng Chăm sóc Khách hàng sẽ gửi thông báo mời ký qua email cho khách hàng. Thông báo thể hiện thời gian, địa điểm và số tiền cần thanh toán (nếu có).</p></div></details>
+  </div>
 </div></section>
 
 <section id="chudautu"><div class="wrap">
