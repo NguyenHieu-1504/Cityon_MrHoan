@@ -395,10 +395,10 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
   <h2 class="rv">Giá tham khảo từ ~55 triệu/m²</h2>
   <p class="lead rv">Giá thay đổi theo vị trí tầng, hướng view và loại hình căn hộ.</p>
   <div class="cards">
-    <div class="pc rv" data-plan="Studio" tabindex="0" role="button" aria-pressed="false" style="--k:var(--c2);--fc:#1f2149;--plan-image:url('imgs/Studio.png')"><div class="fi"><div class="ff front"><i class="hint">Trỏ để xem ảnh · Bấm xem chi tiết</i><h3>Studio</h3><small>31,4 – 31,5 m²</small><em>Từ</em><strong>1,72 tỷ</strong><a class="btn s" href="#dangky">Nhận bảng giá</a></div></div></div>
-    <div class="pc rv" data-plan="1PN+" tabindex="0" role="button" aria-pressed="false" style="--k:var(--c3);--fc:#1f2149;--plan-image:url('imgs/1PN.png')"><div class="fi"><div class="ff front"><i class="hint">Trỏ để xem ảnh · Bấm xem chi tiết</i><h3>1PN+</h3><small>46,6 – 46,9 m²</small><em>Từ</em><strong>2,56 tỷ</strong><a class="btn s" href="#dangky">Nhận bảng giá</a></div></div></div>
-    <div class="pc rv" data-plan="2PN" tabindex="0" role="button" aria-pressed="false" style="--k:var(--c4);--plan-image:url('imgs/2PN.png')"><div class="fi"><div class="ff front"><i class="hint">Trỏ để xem ảnh · Bấm xem chi tiết</i><h3>2PN</h3><small>57,5 – 58,5 m²</small><em>Từ</em><strong>3,16 tỷ</strong><a class="btn s" href="#dangky">Nhận bảng giá</a></div></div></div>
-    <div class="pc rv" data-plan="3PN" tabindex="0" role="button" aria-pressed="false" style="--k:var(--c1);--plan-image:url('imgs/3PN.png')"><div class="fi"><div class="ff front"><i class="hint">Trỏ để xem ảnh · Bấm xem chi tiết</i><h3>3PN</h3><small>78,3 – 78,4 m²</small><em>Từ</em><strong>4,3 tỷ</strong><a class="btn s" href="#dangky">Nhận bảng giá</a></div></div></div>
+    <div class="pc rv" data-plan="Studio" tabindex="0" role="button" aria-pressed="false" style="--k:var(--c2);--fc:#1f2149;--plan-image:url('imgs/New%20folder/ly05.jpg')"><div class="fi"><div class="ff front"><i class="hint">Trỏ để xem ảnh · Bấm xem chi tiết</i><h3>Studio</h3><small>31,4 – 31,5 m²</small><em>Từ</em><strong>1,72 tỷ</strong><a class="btn s" href="#dangky">Nhận bảng giá</a></div></div></div>
+    <div class="pc rv" data-plan="1PN+" tabindex="0" role="button" aria-pressed="false" style="--k:var(--c3);--fc:#1f2149;--plan-image:url('imgs/New%20folder/ly01.jpg')"><div class="fi"><div class="ff front"><i class="hint">Trỏ để xem ảnh · Bấm xem chi tiết</i><h3>1PN+</h3><small>46,6 – 46,9 m²</small><em>Từ</em><strong>2,56 tỷ</strong><a class="btn s" href="#dangky">Nhận bảng giá</a></div></div></div>
+    <div class="pc rv" data-plan="2PN" tabindex="0" role="button" aria-pressed="false" style="--k:var(--c4);--plan-image:url('imgs/New%20folder/ly02.jpg')"><div class="fi"><div class="ff front"><i class="hint">Trỏ để xem ảnh · Bấm xem chi tiết</i><h3>2PN</h3><small>57,5 – 58,5 m²</small><em>Từ</em><strong>3,16 tỷ</strong><a class="btn s" href="#dangky">Nhận bảng giá</a></div></div></div>
+    <div class="pc rv" data-plan="3PN" tabindex="0" role="button" aria-pressed="false" style="--k:var(--c1);--plan-image:url('imgs/New%20folder/ly04.jpg')"><div class="fi"><div class="ff front"><i class="hint">Trỏ để xem ảnh · Bấm xem chi tiết</i><h3>3PN</h3><small>78,3 – 78,4 m²</small><em>Từ</em><strong>4,3 tỷ</strong><a class="btn s" href="#dangky">Nhận bảng giá</a></div></div></div>
   </div>
   <div class="plan-detail" id="plan-detail" hidden aria-live="polite">
     <img id="plan-image" src="" alt="Mặt bằng căn hộ">
@@ -604,10 +604,10 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
   pf.addEventListener('submit',function(e){e.preventDefault();pf.style.display='none';pk.style.display='block'});
   document.querySelectorAll('a[href="#dangky"]').forEach(function(a){if(/bảng giá/i.test(a.textContent)){a.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var c=a.closest('.pc');op(c?c.querySelector('.front h3').textContent:'')})}});
   var plans={
-    'Studio':{image:'imgs/Studio.png',area:'31,4 – 31,5 m² · Tòa A2',price:'Từ 1,72 tỷ',count:'94 căn',fit:'Độc thân, chuyên gia trẻ'},
-    '1PN+':{image:'imgs/1PN.png',area:'46,6 – 46,9 m² · Tòa A2',price:'Từ 2,56 tỷ',count:'154 căn',fit:'Cặp đôi, gia đình trẻ'},
-    '2PN':{image:'imgs/2PN.png',area:'57,5 – 58,5 m² · Tòa A2',price:'Từ 3,16 tỷ',count:'161 căn',fit:'Gia đình sinh hoạt thoải mái'},
-    '3PN':{image:'imgs/3PN.png',area:'78,3 – 78,4 m² · Tòa A2',price:'Từ 4,3 tỷ',count:'97 căn',fit:'Gia đình đa thế hệ'}
+    'Studio':{image:'imgs/New folder/ly05.jpg',area:'31,4 – 31,5 m² · Tòa A2',price:'Từ 1,72 tỷ',count:'94 căn',fit:'Độc thân, chuyên gia trẻ'},
+    '1PN+':{image:'imgs/New folder/ly01.jpg',area:'46,6 – 46,9 m² · Tòa A2',price:'Từ 2,56 tỷ',count:'154 căn',fit:'Cặp đôi, gia đình trẻ'},
+    '2PN':{image:'imgs/New folder/ly02.jpg',area:'57,5 – 58,5 m² · Tòa A2',price:'Từ 3,16 tỷ',count:'161 căn',fit:'Gia đình sinh hoạt thoải mái'},
+    '3PN':{image:'imgs/New folder/ly04.jpg',area:'78,3 – 78,4 m² · Tòa A2',price:'Từ 4,3 tỷ',count:'97 căn',fit:'Gia đình đa thế hệ'}
   };
   var planDetail=document.getElementById('plan-detail');
   function showPlan(card){var name=card.dataset.plan,p=plans[name];if(!p)return;document.querySelectorAll('.pc[data-plan]').forEach(function(c){var active=c===card;c.classList.toggle('selected',active);c.setAttribute('aria-pressed',active?'true':'false')});document.getElementById('plan-image').src=p.image;document.getElementById('plan-image').alt='Mặt bằng căn hộ '+name;document.getElementById('plan-title').textContent=name+' · Tòa A2';document.getElementById('plan-area').textContent=p.area;document.getElementById('plan-price').textContent=p.price;document.getElementById('plan-count').textContent=p.count;document.getElementById('plan-fit').textContent=p.fit;document.getElementById('plan-cta').dataset.plan=name;planDetail.hidden=false;planDetail.scrollIntoView({behavior:'smooth',block:'nearest'})}
