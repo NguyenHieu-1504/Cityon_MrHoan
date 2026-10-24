@@ -418,6 +418,10 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
 .mf .map-pin .tb{left:12px;bottom:10px;display:none;transform:none}
 .mf .map-pin.o .tb{display:block}
 .mf .map-pin span{z-index:7;width:max-content;max-width:min(340px,68vw,48cqw);min-width:min(180px,38cqw);white-space:normal;line-height:1.4}
+.mf .map-pin span{width:min(280px,58cqw);padding:9px;border:1px solid color-mix(in srgb,var(--tc,var(--c1)) 45%,#fff);box-shadow:0 12px 30px #07112d66}
+.mf .map-pin-photo{display:block;width:100%;height:clamp(78px,10cqw,132px);margin:0 0 8px;border:2px solid var(--tc,var(--c1));border-radius:9px 9px 14px 14px;object-fit:cover;background:#fff;pointer-events:none}
+.mf .map-pin.bl span{bottom:auto;top:16px;transform:translateX(-50%) translateY(-6px)}
+.mf .map-pin.bl:hover span,.mf .map-pin.bl.o span,.mf .map-pin.bl:focus-visible span{transform:translateX(-50%)}
 .mf .map-pin:hover,.mf .map-pin.o,.mf .map-pin:focus-visible{z-index:8}
 .mf .hs.pj{z-index:9}
 .mf .map-pin.mr .tb{left:-12px;transform:translateX(-100%)}
@@ -697,6 +701,8 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
   try{var sv=localStorage.getItem('cityon-theme');if(sv==='dark')setT('dark',false)}catch(e){}
   tg.addEventListener('click',function(){setT(R.getAttribute('data-theme')==='dark'?'light':'dark',true)});
   var mf=document.getElementById('mf'),mi=document.getElementById('mi'),ms=1,mx=0,my=0,dr=null;
+  var pinPhotoExt={'Trường Giáo dục đặc biệt - Vin Nexus Center':'.jpg','Trường Vinschool Ocean Park 2':'.webp','Trường Uppingham Việt Nam':'.jpg','Đại học Mở Hà Nội - cơ sở 2':'.webp','Đại học Bách Khoa - cơ sở 2':'.jpg','Trường Brighton College Vietnam':'.webp','Trường Đại học VinUni':'.jpg','Trường Đại học Anh Quốc Việt Nam (BUV)':'.jpg','Mega Grand World Hà Nội':'.jpg','VinWonders Water Park':'.jpg','Vincom Mega Mall Ocean Park':'.webp','Sân vận động PVF':'.webp','Làng gốm Bát Tràng':'.jpg','Hồ Hoàn Kiếm':'.webp','Nhà Hát Lớn':'.jpg','Lăng Chủ tịch Hồ Chí Minh':'.jpg','Bệnh viện Đa khoa Vinmec Ocean Park 2':'.jpg','Bệnh viện Đa khoa Tâm Anh':'.jpg','Bệnh viện Đại học Y Hà Nội - cơ sở Hoàng Mai':'.jpg','Bệnh viện Hữu nghị Việt Đức - cơ sở Ngọc Hồi':'.jpg'};
+  document.querySelectorAll('#mf .map-pin').forEach(function(pin){var label=(pin.getAttribute('aria-label')||'').replace(/^\d+\s*phút\s*-\s*/,'').trim(),ext=pinPhotoExt[label],tip=pin.querySelector('span');if(parseFloat(pin.style.top)<42)pin.classList.add('bl');if(!ext||!tip)return;var photo=document.createElement('img');photo.className='map-pin-photo';photo.alt=label;photo.loading='lazy';photo.decoding='async';var loadPhoto=function(){if(!photo.hasAttribute('src'))photo.src='imgs/ketnoi/'+encodeURIComponent(label)+ext};photo.addEventListener('error',function(){photo.remove()},{once:true});pin.addEventListener('pointerenter',loadPhoto,{once:true});pin.addEventListener('focus',loadPhoto,{once:true});pin.addEventListener('click',loadPhoto);tip.insertBefore(photo,tip.firstChild)});
   function mc(){var fw=mf.clientWidth,fh=mf.clientHeight,w=mi.offsetWidth*ms,hh=mi.offsetHeight*ms;mx=w<=fw?(fw-w)/2:Math.min(0,Math.max(fw-w,mx));my=hh<=fh?(fh-hh)/2:Math.min(0,Math.max(fh-hh,my))}
   function ma(){mc();mi.style.transform='translate('+mx+'px,'+my+'px) scale('+ms+')';mi.style.setProperty('--inv',1/ms);mf.classList.toggle('z',ms>1||mi.offsetWidth>mf.clientWidth+2)}
   function mr(){ms=1;mx=mf.clientWidth/2-.725*mi.offsetWidth;my=mf.clientHeight/2-.65*mi.offsetHeight;ma()}
