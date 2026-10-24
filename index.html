@@ -392,8 +392,13 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
 .video-feature-head p{margin:0;color:var(--mut);font-size:15px;line-height:1.65}
 .video-frame{position:relative;padding:3px;border-radius:24px;background:linear-gradient(120deg,var(--video-a),var(--video-b),var(--c2),var(--video-a));background-size:300% 300%;animation:video-spectrum 7s linear infinite;box-shadow:0 0 18px color-mix(in srgb,var(--video-a) 35%,transparent),0 12px 32px #101a3b26}
 .video-frame video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;border-radius:21px;background:#101a3b}
+.vr-feature{--video-a:var(--c4);--video-b:var(--c1)}
+.vr-frame{padding:3px;border-radius:24px;background:linear-gradient(120deg,var(--video-a),var(--video-b),var(--c2),var(--video-a));background-size:300% 300%;animation:video-spectrum 7s linear infinite;box-shadow:0 0 18px color-mix(in srgb,var(--video-a) 35%,transparent),0 12px 32px #101a3b26}
+.vr-frame iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:21px;background:#101a3b}
+.vr-actions{display:flex;justify-content:flex-end;margin-top:14px}
+.vr-open{background:linear-gradient(120deg,var(--c4),var(--c1));color:#fff}
 @keyframes video-spectrum{0%{background-position:0% 50%}100%{background-position:300% 50%}}
-@media(max-width:600px){.video-feature{padding:14px;border-radius:24px}.video-frame{border-radius:19px}.video-frame video{border-radius:16px}}
+@media(max-width:600px){.video-feature{padding:14px;border-radius:24px}.video-frame,.vr-frame{border-radius:19px}.video-frame video,.vr-frame iframe{border-radius:16px}.vr-frame iframe{aspect-ratio:4/3}.vr-actions .btn{width:100%;text-align:center}}
 @keyframes amenity-rgb{0%{background-position:0% 50%;box-shadow:0 0 16px #2680ff55,0 0 30px #ff5fa222}50%{background-position:100% 50%;box-shadow:0 0 20px #ff5fa255,0 0 38px #ffc93c33}100%{background-position:0% 50%;box-shadow:0 0 16px #2680ff55,0 0 30px #ff5fa222}}
 
 /* Styles required by the replacement location section */
@@ -436,7 +441,7 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
 @media(max-width:520px){.expert-heading{margin-bottom:24px}.expert-quote{padding:23px 20px 23px 54px}.expert-quote .mark{left:16px}.expert-points{grid-template-columns:1fr}.expert-point h3{font-size:16px}.expert-actions{display:grid}.expert-actions .btn{text-align:center}}
 @media(max-width:600px){.investor{grid-template-columns:1fr;gap:20px;padding:20px}.investor-logo{width:min(220px,75%);margin:auto;padding:18px}}
 @media(max-width:680px){.layout-subsection{margin-top:44px;padding-top:34px}.layout-gallery{grid-template-columns:1fr;gap:14px}.layout-card figcaption{padding:14px 16px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{transition:opacity .35s ease,transform .35s ease;transform:translateY(12px)}.blob,.tw,.marq div,.map::before,.map i,.fab,.ct .ph,.rd,.rg,.hs.pj i::after,.ov line,.work-contact,.investor,.amenity-plan-frame,.interior-gallery,.video-frame,#faq .faq-item[open] .faq-answer{animation:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{transition:opacity .35s ease,transform .35s ease;transform:translateY(12px)}.blob,.tw,.marq div,.map::before,.map i,.fab,.ct .ph,.rd,.rg,.hs.pj i::after,.ov line,.work-contact,.investor,.amenity-plan-frame,.interior-gallery,.video-frame,.vr-frame,#faq .faq-item[open] .faq-answer{animation:none!important}}
 </style>
 </head>
 <body>
@@ -481,6 +486,11 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
   <article class="video-feature rv" style="--video-a:var(--c1);--video-b:var(--c4)">
     <div class="video-feature-head"><span class="video-feature-tag">THE CITYON · PROJECT FILM</span><h3>Video tổng quan dự án</h3><p>Khám phá The CityOn và nhịp sống đô thị tại Ocean Park 3.</p></div>
     <div class="video-frame"><video controls playsinline webkit-playsinline preload="none" poster="imgs/video-posters/demo.jpg" aria-label="Video giới thiệu tổng quan dự án The CityOn"><source src="vids/web/Demo.mp4" type="video/mp4">Trình duyệt của bạn chưa hỗ trợ phát video MP4.</video></div>
+  </article>
+  <article class="video-feature vr-feature rv">
+    <div class="video-feature-head"><span class="video-feature-tag">THE CITYON · VR 360°</span><h3>Trải nghiệm The CityOn qua góc nhìn 360°</h3><p>Khám phá không gian dự án theo góc nhìn toàn cảnh. Xoay để quan sát xung quanh hoặc mở chế độ toàn màn hình.</p></div>
+    <div class="vr-frame"><iframe src="https://kuula.co/share/L6p6s?fs=1&amp;vr=1" title="Trải nghiệm VR 360° dự án The CityOn" loading="lazy" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <div class="vr-actions"><a class="btn vr-open" href="https://kuula.co/share/L6p6s?fs=1&amp;vr=1" target="_blank" rel="noopener">Mở VR 360° toàn màn hình ↗</a></div>
   </article>
 </div></section>
 
