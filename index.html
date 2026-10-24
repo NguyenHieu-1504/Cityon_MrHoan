@@ -164,6 +164,13 @@ details p{color:var(--mut);margin:12px 0 0}
 .ok{display:none;font-weight:800;background:#ffffff33;border-radius:16px;padding:16px}
 footer{padding:50px 5vw;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+.footer-logos{display:flex;align-items:center;gap:14px}
+.footer-logo-card{display:flex;align-items:center;justify-content:center;width:clamp(130px,16vw,190px);height:92px;padding:16px;border:1px solid #ffffff30;border-radius:20px;background:#fff;box-shadow:0 10px 28px #1f214914;transition:transform .3s,box-shadow .3s}
+.footer-logo-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px #2680ff26}
+.footer-logo-card.ssm{background:#101d3b}
+.footer-logo-card img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+.footer-address{max-width:430px;line-height:1.8}
+@media(max-width:600px){footer .wrap{flex-direction:column;align-items:stretch}.footer-logos{justify-content:flex-start;flex-wrap:wrap}.footer-logo-card{width:min(42vw,170px);height:82px}.footer-address{max-width:none}}
 .work-contact{position:relative;isolation:isolate;min-width:min(100%,300px);padding:20px 24px;border:1px solid transparent;border-radius:24px;background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(125deg,var(--c1),var(--c4),var(--c2),var(--c3),var(--c1)) border-box;background-size:100% 100%,260% 260%;background-position:0 0,0% 50%;box-shadow:0 12px 32px #2680ff20;animation:work-contact-glow 5s ease-in-out infinite;transition:transform .3s,box-shadow .3s}
 .work-contact:hover{transform:translateY(-5px);box-shadow:0 18px 42px #ff5fa244}
 .work-contact b{display:inline-block;margin-bottom:6px;color:var(--ink);font-size:16px;font-weight:900}
@@ -635,7 +642,7 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
     <div class="pk" id="pok"><b>Cảm ơn bạn!</b><br>Chuyên viên sẽ liên hệ sớm nhất.<br><button class="btn s" id="pcl" type="button">Đóng</button></div>
   </div>
 </div>
-<footer><div class="wrap"><div class="work-contact rv"><b>Contact for work</b><br>Hotline: <a href="tel:+84912728066">0912 728 066</a><br>Email: <a href="mailto:Hoannguyen.tll@gmail.com">Hoannguyen.tll@gmail.com</a></div><div><b>MIK GROUP</b><br>Email: info@cityon.com.vn<br>Website: cityon.com.vn</div><div>© Bản quyền: The CityOn<br>Trang mô phỏng giao diện, thông tin mang tính tham khảo.</div></div></footer>
+<footer><div class="wrap"><div class="work-contact rv"><b>Contact for work</b><br>Hotline: <a href="tel:+84912728066">0912 728 066</a><br>Email: <a href="mailto:Hoannguyen.tll@gmail.com">Hoannguyen.tll@gmail.com</a></div><div class="footer-logos" aria-label="Đơn vị phát triển dự án"><div class="footer-logo-card ssm"><img src="imgs/ssm.png" alt="SSM Group"></div><div class="footer-logo-card"><img src="imgs/mik.png" alt="MIK Group"></div></div><div class="footer-address">© Bản quyền: The CityOn<br>VP làm việc: SP.11- 47 &amp; SP.11- 51, đường Sao Biển 11, KĐT Vinhomes Ocean Park, Gia Lâm, Hà Nội</div></div></footer>
 <a class="fab" href="#dangky">Nhận bảng giá</a>
 <div class="ct" aria-label="Liên hệ nhanh">
   <a class="ph" href="tel:0912728066" aria-label="Gọi điện"><span>Gọi ngay</span><svg viewBox="0 0 24 24"><path fill="#fff" d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a>
