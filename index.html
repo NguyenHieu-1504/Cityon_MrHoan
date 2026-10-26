@@ -392,6 +392,15 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
 .video-feature-head p{margin:0;color:var(--mut);font-size:15px;line-height:1.65}
 .video-frame{position:relative;padding:3px;border-radius:24px;background:linear-gradient(120deg,var(--video-a),var(--video-b),var(--c2),var(--video-a));background-size:300% 300%;animation:video-spectrum 7s linear infinite;box-shadow:0 0 18px color-mix(in srgb,var(--video-a) 35%,transparent),0 12px 32px #101a3b26}
 .video-frame video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;border-radius:21px;background:#101a3b}
+.expert-video-feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,340px);gap:clamp(24px,5vw,56px);align-items:center}
+.expert-video-feature .video-feature-head{margin:0}
+.expert-video-feature .video-frame video{aspect-ratio:9/16;max-height:min(78vh,720px);object-fit:cover}
+.expert-video-feature .video-feature-head h3{max-width:680px;font-size:clamp(24px,3.2vw,38px);line-height:1.2}
+.expert-video-question{margin:18px 0 14px;padding:16px 18px;border-left:5px solid var(--c2);border-radius:0 18px 18px 0;background:linear-gradient(100deg,color-mix(in srgb,var(--c2) 18%,var(--bg)),var(--bg2));color:var(--ink);font-size:clamp(16px,1.8vw,20px);font-weight:900;line-height:1.45}
+.expert-video-points{display:grid;gap:12px}
+.expert-video-point{display:grid;grid-template-columns:38px minmax(0,1fr);gap:12px;align-items:start;padding:15px 16px;border:1px solid var(--line);border-radius:18px;background:var(--bg);box-shadow:0 8px 22px #1f214908}
+.expert-video-point b{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg,var(--c1),var(--c4));color:#fff;font-size:13px}
+.expert-video-point p{margin:1px 0 0;color:var(--mut);font-size:14px;line-height:1.6}
 .vr-feature{--video-a:var(--c4);--video-b:var(--c1)}
 .vr-frame{padding:3px;border-radius:24px;background:linear-gradient(120deg,var(--video-a),var(--video-b),var(--c2),var(--video-a));background-size:300% 300%;animation:video-spectrum 7s linear infinite;box-shadow:0 0 18px color-mix(in srgb,var(--video-a) 35%,transparent),0 12px 32px #101a3b26}
 .vr-frame iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:21px;background:#101a3b}
@@ -443,6 +452,7 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
 @media(max-width:560px){.location-groups{grid-template-columns:1fr;margin-top:16px}.location-group{border-radius:20px;padding:17px}.location-group h3{font-size:15px}.location-group li{font-size:13px}}
 @media(max-width:680px){.tmode .hs.tm .tb{display:none}.hs span{max-width:min(190px,48vw);white-space:normal;line-height:1.35}.hs.bl span{bottom:auto;top:18px}.hs.ml span{left:0;transform:translateY(6px)}.hs.ml:hover span,.hs.ml.o span{transform:translateY(0)}.hs.mr span{left:0;transform:translateX(-100%) translateY(6px)}.hs.mr:hover span,.hs.mr.o span{transform:translateX(-100%)}.mz{z-index:6}.mf.z{touch-action:none}}
 @media(max-width:820px){.expert-layout{grid-template-columns:1fr}.expert-portrait{position:relative;top:auto;max-width:480px;margin:0 auto}.expert-points{gap:10px}.expert-point{padding:17px 14px}}
+@media(max-width:820px){.expert-video-feature{grid-template-columns:1fr}.expert-video-feature .video-frame{width:min(100%,420px);margin-inline:auto}.expert-video-feature .video-frame video{max-height:none}}
 @media(max-width:520px){.expert-heading{margin-bottom:24px}.expert-quote{padding:23px 20px 23px 54px}.expert-quote .mark{left:16px}.expert-points{grid-template-columns:1fr}.expert-point h3{font-size:16px}.expert-actions{display:grid}.expert-actions .btn{text-align:center}}
 @media(max-width:600px){.investor{grid-template-columns:1fr;gap:20px;padding:20px}.investor-logo{width:min(220px,75%);margin:auto;padding:18px}}
 @media(max-width:680px){.layout-subsection{margin-top:44px;padding-top:34px}.layout-gallery{grid-template-columns:1fr;gap:14px}.layout-card figcaption{padding:14px 16px}}
@@ -604,6 +614,10 @@ nav a.on{opacity:1;color:var(--c1)}nav a.on::after{right:0}
       <div class="expert-actions rv"><a class="btn" href="tel:0912728066">Trao đổi với chuyên gia</a><a class="btn alt-btn" href="#banggia">Xem bảng giá căn hộ</a></div>
     </div>
   </div>
+  <article class="video-feature expert-video-feature rv" style="--video-a:var(--c1);--video-b:var(--c4)">
+    <div class="video-feature-head"><span class="video-feature-tag">THE CITYON · GÓC NHÌN CHUYÊN GIA</span><h3>Chia sẻ góc nhìn về The Cityon từ MR. Nguyễn Văn Hoan – GĐDA</h3><div class="expert-video-question">THE CITYON CÓ GÌ ĐỂ KHÁCH HÀNG DỄ “NHỚ” NGAY TỪ LẦN ĐẦU?</div><div class="expert-video-points"><div class="expert-video-point"><b>01</b><p>Dự án gồm 4 tòa, khoảng 2.119 căn, cao 35 tầng, với cơ cấu căn hộ đa dạng.</p></div><div class="expert-video-point"><b>02</b><p>Video giúp anh chị nắm các thông tin chính về dự án: quy mô, sản phẩm, trước khi đi sâu vào từng phân khu và từng dòng căn hộ.</p></div></div></div>
+    <div class="video-frame"><video controls playsinline webkit-playsinline preload="none" poster="imgs/video-posters/1025.jpg" aria-label="Video chia sẻ góc nhìn về dự án The Cityon"><source src="vids/web/1025.mp4" type="video/mp4">Trình duyệt của bạn chưa hỗ trợ phát video MP4.</video></div>
+  </article>
   <article class="video-feature rv" style="--video-a:var(--c2);--video-b:var(--c4)">
     <div class="video-feature-head"><span class="video-feature-tag">THE CITYON · GÓC NHÌN TOD</span><h3>TOD là gì? Giao thông công cộng vận hành ra sao trên thế giới?</h3><p>Video giúp hiểu mô hình TOD và vai trò của giao thông công cộng trong cách các đô thị hiện đại được tổ chức. Phần Vị trí bên dưới cung cấp thông tin riêng về kết nối của The CityOn.</p></div>
     <div class="video-frame"><video controls playsinline webkit-playsinline preload="none" poster="imgs/video-posters/tod.jpg" aria-label="Video phân tích TOD và giao thông công cộng trên thế giới"><source src="vids/web/TOD.mp4" type="video/mp4">Trình duyệt của bạn chưa hỗ trợ phát video MP4.</video></div>
